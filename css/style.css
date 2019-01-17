@@ -1,0 +1,100 @@
+@font-face {
+  font-family: 'PTsans';
+  src: url('../fonts/ptsans.woff2') format('woff2'), url('../fonts/ptsans.woff') format('woff');
+  font-weight: 400;
+  font-style: normal
+}
+
+@font-face {
+  font-family: 'PTsans';
+  src: url('../fonts/ptsansbold.woff2') format('woff2'), url('../fonts/ptsansbold.woff') format('woff');
+  font-weight: 800;
+  font-style: normal
+}
+
+.visually-hidden:not(:focus):not(:active),
+input[type='checkbox'].visually-hidden,
+input[type='radio'].visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  white-space: nowrap;
+  border: 0;
+  -webkit-clip-path: inset(100%);
+  clip-path: inset(100%);
+}
+
+body {
+  font-family: 'PTsans', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 26px;
+  min-width: 1200px;
+  margin: 0;
+  padding: 0;
+  color: #333333;
+  background: #f2f2f2;
+}
+
+a {
+  text-decoration: none;
+  color: #000000;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.site-navigation,
+.features__list,
+.footer-social {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/*----------HEADER----------*/
+
+.main-header {
+	display: flex;
+	justify-content: center;
+	min-height: 56px;
+}
+
+.header-logo {
+	position: absolute;
+}
+
+.main-navigation {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0 73px;
+	min-height: 56px;
+	min-width: 1200px;
+	background: #ffffff;
+}
+
+.site-navigation {
+	display: flex;
+	justify-content: space-between;
+	min-width: 1056px;
+}
+
+.site-navigation li {
+	font-weight: 800;
+  text-transform: uppercase;
+}
+
+.logo-place {
+	width: 100px;
+}
+
+
+
+
