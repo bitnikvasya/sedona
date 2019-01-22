@@ -111,17 +111,31 @@ img {
 .intro {
 	width: 1200px;
 	margin: 0 auto;
-	min-height: 725px;
-	background: url(../img/background-photo.png) top center no-repeat #517ca4;
+	padding-top: 76px;
+	min-height: 641px;
+	background: url(../img/background-photo.png) 0 -56px no-repeat #517ca4;
 }
 
 .intro__image {
 	display: block;
-	margin: 76px auto;
+	margin: 0 auto 80px;
 }
 
 .intro__header-wrapper {
+	position: relative;
+	min-height: 149px;
+	padding-top: 59px;
 	background: #ffffff;
+}
+
+.intro__header-wrapper:before {
+	content: '';
+  position: absolute;
+  left: 0;
+  top: -59px;
+  width: 1200px;
+  height: 59px;
+  background: url(../img/polygon.png) no-repeat;
 }
 
 .intro__header {
@@ -129,5 +143,6 @@ img {
 	margin: 0 auto;
 	text-align: center;
 	font-weight: 800;
+	color: #000000;
   text-transform: uppercase;
 }
