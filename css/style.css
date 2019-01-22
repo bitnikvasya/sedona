@@ -64,6 +64,9 @@ img {
 	display: flex;
 	justify-content: center;
 	min-height: 56px;
+	width: 1200px;
+	margin: 0 auto;
+	box-shadow: 0 0 20px 0 #cfcfcf;
 }
 
 .header-logo {
@@ -72,7 +75,6 @@ img {
 
 .main-navigation {
 	display: flex;
-	align-items: center;
 	justify-content: center;
 	margin: 0 73px;
 	min-height: 56px;
@@ -82,19 +84,50 @@ img {
 
 .site-navigation {
 	display: flex;
-	justify-content: space-between;
+	align-items: center;
 	min-width: 1056px;
 }
 
 .site-navigation li {
 	font-weight: 800;
   text-transform: uppercase;
+  width: 240px;
 }
 
-.logo-place {
-	width: 100px;
+.site-navigation li:nth-child(2) {
+	margin-right: 96px;
 }
 
+.site-navigation li:nth-child(n+3) {
+	text-align: right;
+}
 
+.container {
+	width: 1200px;
+	margin: 0 auto;
+	background: #ffffff;
+}
 
+.intro {
+	width: 1200px;
+	margin: 0 auto;
+	min-height: 725px;
+	background: url(../img/background-photo.png) top center no-repeat #517ca4;
+}
 
+.intro__image {
+	display: block;
+	margin: 76px auto;
+}
+
+.intro__header-wrapper {
+	background: #ffffff;
+}
+
+.intro__header {
+	width: 470px;
+	margin: 0 auto;
+	text-align: center;
+	font-weight: 800;
+  text-transform: uppercase;
+}
