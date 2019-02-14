@@ -71,14 +71,18 @@ img {
 .site-navigation,
 .features__list,
 .footer-social,
-.features__item-list {
+.features__item-list,
+.filter__item-list,
+.sorting__list,
+.hotel__list {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
 .main-header,
-.container {
+.container,
+.main-footer {
 	box-shadow: 0 10px 20px rgba(0,0,0,0.25);
 }
 
@@ -95,11 +99,13 @@ img {
   vertical-align: middle;
   text-transform: uppercase;
   background-color: #766357;
+  border: none;
 }
 
 .button:hover,
 .button:focus {
   background-color: #604e43;
+  outline: none;
 }
 
 .button:active {
@@ -157,6 +163,10 @@ img {
 
 .site-navigation a:active {
 	color: #b2b2b2;
+}
+
+.site-navigation__item--current {
+	color: #766357;
 }
 
 /*----------MAIN----------*/
@@ -316,6 +326,7 @@ img {
 	width: 1200px;
 	margin: 0 auto;
 	text-align: center;
+	background: #ffffff;
 }
 
 .hotel-search__header {
@@ -342,6 +353,10 @@ img {
 
  /*----------MAP----------*/
 
+ .map {
+ 	margin-bottom: -120px;
+ }
+
  .map img {
  	position: absolute;
  	z-index: -1;
@@ -356,11 +371,17 @@ img {
 
  .main-footer {
  	display: flex;
+ 	position: relative;
  	justify-content: center;
 	min-height: 120px;
 	width: 1200px;
 	margin: 0 auto;
 	background: #ffffff;
+ }
+
+ .main-footer--transparent {
+	background: rgba(255,255,255,0.8);
+	box-shadow: none;
  }
 
  .hashtag,
@@ -630,38 +651,388 @@ img {
   outline: none;
 }
 
+/*----------FILTERS----------*/
 
-/*
-.search-form-adult:before,
-.search-form-adult:after,
-.search-form-child:before,
-.search-form-child:after {
-	position: absolute;
-	content: "";
-	height: 11px; 
-	width: 3px;
-	right: 19px;
-	background: #000000;
+.filters {
+	width: 1200px;
+	margin: 0 auto;
+	padding: 27px 0 6px;
+	background: url(../img/filter_background.png) 0 -56px no-repeat #517ca4;
 }
 
-.search-form-adult:before,
-.search-form-child:before {
-	transform: rotate(90deg);
+.filter {
+	display: flex;
+	width: 1054px;
+	margin: 0 auto;
 }
 
-.minus {
+.filter-item {
+	width: 255px;
+	border: none;
+	padding: 0;
+	margin: 0;
+}
+
+.filter-item:nth-child(2) {
+	margin-right: auto;
+}
+
+.filter-item__title {
+	font-size: 16px;
+  line-height: 21px;
+  font-weight: 800;
+  color: #ffffff;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+}
+
+.filter__item-list {
+	font-size: 14px;
+  line-height: 21px;
+  font-weight: 400;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.filter-item__option {
+	padding-left: 40px;
+	margin-bottom: 25px;
+}
+
+.filter-item__option label {
+  position: relative;
+  display: block;
+  cursor: pointer;
+}
+
+.filter-input-checkbox + label:before {
+  content: "";
+  position: absolute;
+  left: -40px;
+  top: 0;
+  width: 23px;
+  height: 23px;
+  background: url(../img/checkbox-off.png) 0 0 no-repeat;
+}
+
+.filter-input-checkbox:checked + label:after {
+  content: "";
+  position: absolute;
+  left: -40px;
+  top: 0;
+  width: 27px;
+  height: 23px;
+  background: url(../img/checkbox-on.png) 0 0 no-repeat;
+}
+
+.filter-range__title {
+	margin-bottom: 9px;
+}
+
+.filter-range__item {
+	width: 315px;
+}
+
+.price-controls {
 	position: relative;
+  height: 33px;
+  margin-bottom: 20px;
+  border: 2px solid #ffffff;
+  border-radius: 2px;
+  font-size: 0;
 }
 
-.minus:before {
-	position: absolute;
-	content: "";
-	height: 11px; 
-	width: 3px;
-	right: 50px;
-	background: #000000;
+.price-controls:after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 22px;
+  background: #ffffff;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.minus {
-	fill: #000000;
-} */
+.price-controls label {
+  display: inline-block;
+  width: 80px;
+  padding-left: 65px;
+  margin-top: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: 400;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.price-controls input {
+  width: 50px;
+  margin: 0;
+  color: inherit;
+  font: inherit;
+  background: none;
+  border: none;
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: 400;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.range-controls {
+  position: relative;
+
+  margin-bottom: 32px;
+}
+
+.range-controls .scale {
+  height: 2px;
+
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.range-controls .bar {
+  width: 80%;
+  height: 2px;
+
+  background: #ffffff;
+}
+
+.range-toggle {
+  position: absolute;
+  top: -9px;
+
+  width: 4px;
+  height: 4px;
+
+  background: #ababab;
+  border: 8px solid #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 2px 1px 0 rgba(0, 1, 1, 0.2);
+  cursor: pointer;
+}
+
+.range-toggle:hover {
+  background: #1c4f80;
+}
+
+.range-toggle-min {
+  left: 0;
+}
+
+.range-toggle-max {
+  left: 80%;
+}
+
+.filter__button {
+  display: block;
+  margin: 0 auto;
+  padding: 6px 33px;
+
+  font-size: 14px;
+  line-height: 21px;
+  color: #ffffff;
+  text-transform: uppercase;
+
+  background: transparent;
+  border: 2px solid #ffffff;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.filter__button:hover {
+  color: #000000;
+
+  background: #ffffff;
+}
+
+/*----------SORT----------*/
+
+.hotel {
+  width: 1200px;
+	margin: 0 auto;
+}
+
+.sorting {
+	display: flex;
+	align-content: center;
+	margin: 0 auto;
+	padding: 30px 73px;
+	border-bottom: 1px solid #e5e5e5;
+}
+
+.sorting-result {
+	width: 135px;
+	margin: 0 30px 0 0;
+	font-size: 21px;
+  line-height: 26px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.sorting__title,
+.sorting__list {
+	font-size: 12px;
+  line-height: 26px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.sorting__title {
+	width: 100px;
+	margin-right: 15px;
+}
+
+.sorting__list {
+	display: flex;
+	margin-right: auto;
+}
+
+.sorting__list-button a {
+	margin-right: 33px;
+	color: #cacaca;
+	border-bottom: 1px dotted #cacaca;
+}
+
+.sorting__list-button:hover a,
+.sorting__list-button--current a {
+  color: #81b3d2;
+  border: none;
+}
+
+.sorting__list-button:active a {
+  color: #000000;
+}
+
+.sort-radio + label {
+  position: relative;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  cursor: pointer;
+  margin: auto 0 auto 14px;
+}
+
+.sort-up+label:after {
+  position: absolute;
+  content: '';
+  border-right: 5px solid transparent;
+  border-bottom: 10px solid #cacaca;
+  border-left: 5px solid transparent;
+}
+
+.sort-down+label:after {
+  position: absolute;
+  content: '';
+  border-top: 10px solid #cacaca;
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+}
+
+.sort-up+label:hover:after {
+  border-bottom: 10px solid #000000;
+}
+
+.sort-down+label:hover:after {
+  border-top: 10px solid #000000;
+}
+
+.sort-up:checked+label:after,
+.sort-up+label:active:after {
+  border-bottom: 10px solid #81b3d2;
+}
+
+.sort-down:checked+label:after,
+.sort-down+label:active:after {
+  border-top: 10px solid #81b3d2;
+}
+
+/*----------HOTEL LIST----------*/
+
+.hotel__list {
+	margin: 0 auto;
+}
+
+.hotel__list-item {
+	display: flex;
+	padding: 30px 73px 29px;
+	border-bottom: 1px solid #e5e5e5;
+}
+
+.hotel__desciption-container {
+	margin-left: 30px;
+}
+
+.hotel__desciption-container h3 {
+	font-size: 21px;
+  line-height: 16px;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin: 0 0 12px 0;
+}
+
+.hotel__desciption-container a:hover,
+.hotel__desciption-container a:focus {
+	color: #81b3d2;
+}
+
+.hotel__desciption-container a:active {
+	color: #000000;
+}
+
+.hotel__type-price {
+	font-size: 14px;
+  line-height: 21px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.hotel__type-price span {
+	display: inline-block;
+	width: 110px;
+	margin: 0 0 14px 0;
+}
+
+.hotel__desciption-container button {
+	height: 27px;
+	padding: 0 17px;
+}
+
+.hotel__details-button {
+	background: #81b3d2;
+}
+
+.hotel__details-button:hover,
+.hotel__details-button:focus {
+  background-color: #669ec0;
+  outline: none;
+}
+
+.hotel__details-button:active {
+	color: #88b6d1;
+  background-color: #669ec0;
+}
+
+.hotel__stars-rating {
+	margin-left: auto;
+	text-align: right;
+}
+
+.hotel__star {
+	margin-left: 2px;
+}
+
+.hotel__rating {
+	margin: 37px 0 0 0;
+  height: 27px;
+  width: 110px;
+	font-size: 14px;
+  font-weight: 400;
+  line-height: 26px;
+  text-align: center;
+  color: #000000;
+  vertical-align: middle;
+  text-transform: uppercase;
+  background-color: #f2f2f2;
+}
